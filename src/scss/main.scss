@@ -1,0 +1,15 @@
+// @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
+
+@import 'vars';
+@import "mixins";
+
+
+@import "./components/header";
+@import "./components/footer";
+
+
+
+body {
+  background-color: #000;
+  color: #fff;
+}
