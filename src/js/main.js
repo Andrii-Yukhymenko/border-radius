@@ -2,9 +2,9 @@ let figureBody = document.querySelector('.figure__body'),
   borderInputs = document.querySelectorAll('.figure__border-input'),
   figureResult = figureBody.querySelector('.figure__result'),
   checkboxCss = document.querySelector('input#css'),
-  checkboxWebkit = document.querySelector('input#css'),
-  checkboxGecko = document.querySelector('input#css');
-// console.log(checkboxCss.checked);
+  checkboxWebkit = document.querySelector('input#webkit'),
+  checkboxGecko = document.querySelector('input#gecko'),
+  checkboxList = document.querySelector('.figure__checkbox-list');
 
 figureBody.addEventListener('input', (event) => {
   if (
@@ -17,20 +17,33 @@ figureBody.addEventListener('input', (event) => {
   }
 });
 
+checkboxList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('checkbox__input')) {
+    calculate();
+  }
+});
+
 function calculate() {
-  let position = event.target.id;
   figureResult.innerText = '';
   borderInputs.forEach((item, number) => {
     if (item.value !== '' && item.value !== null) {
-      // if()
-      // if (i){}
-      // else {}
-      console.log(item.value);
-      figureResult.innerHTML += 'border-' + position + '-radius: ' + item.value + 'px; <br>';
+      let position = item.id;
+      console.clear();
+      console.log(checkboxCss.checked);
+      console.log(checkboxWebkit.checked);
+      console.log(checkboxGecko.checked);
+      if (checkboxCss.checked === true) {
+        figureResult.innerHTML += 'border-' + position + '-radius: ' + item.value + 'px; <br>';
+      }
+      if (checkboxWebkit.checked === true) {
+        figureResult.innerHTML +=
+          '-webkit-border-' + position + '-radius: ' + item.value + 'px; <br>';
+      }
+      if (checkboxGecko.checked === true) {
+        figureResult.innerHTML += '-moz-border-radius-' + position + ': ' + item.value + 'px; <br>';
+      }
     }
   });
 }
 
-function renderBorders(){
-
-}
+function renderBorders() {}
