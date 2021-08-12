@@ -1,15 +1,80 @@
 // @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
 
 @import 'vars';
-@import "mixins";
+@import 'mixins';
 
-
-@import "./components/header";
-@import "./components/footer";
-
-
+@import './components/header';
+@import './components/footer';
 
 body {
   background-color: #000;
   color: #fff;
+  //font-family: Voronov;
+}
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+}
+
+.constructor {
+  &__container {
+  }
+  &__title {
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+  }
+  &__subtitle {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+  }
+  &__figure {
+  }
+}
+.figure {
+  background-color: #7e6767;
+  padding: 40px;
+  position: relative;
+  &__body {
+  }
+  &__result {
+    background-color: #cbcbcb;
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+  }
+  &__checkbox-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__checkbox {
+  }
+  &__border-input {
+    width: 50px;
+    position: absolute;
+    &--top-left {
+      top: -20px;
+      left: 0;
+      transform: translate(-110%, 0%);
+    }
+    &--top-right {
+      top: -20px;
+      right: 0;
+      transform: translate(110%, 0%);
+    }
+    &--bottom-left {
+      bottom: -20px;
+      left: 0;transform: translate(-110%, 0%);
+    }
+    &--bottom-right {
+      bottom: -20px;
+      right: 0;transform: translate(110%, 0%);
+    }
+  }
+}
+.checkbox {
+  margin: 10px;
+  &__input {
+  }
+  &__label {
+  }
 }

@@ -2,4 +2,51 @@ body {
   background-color: #000;
   color: #fff; }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto; }
+
+.constructor__title {
+  text-align: center;
+  margin: 20px 0px 20px 0px; }
+
+.constructor__subtitle {
+  text-align: center;
+  margin: 0px 0px 20px 0px; }
+
+.figure {
+  background-color: #7e6767;
+  padding: 40px;
+  position: relative; }
+  .figure__result {
+    background-color: #cbcbcb;
+    margin: 0px 0px 20px 0px;
+    padding: 10px; }
+  .figure__checkbox-list {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .figure__border-input {
+    width: 50px;
+    position: absolute; }
+    .figure__border-input--top-left {
+      top: -20px;
+      left: 0;
+      transform: translate(-110%, 0%); }
+    .figure__border-input--top-right {
+      top: -20px;
+      right: 0;
+      transform: translate(110%, 0%); }
+    .figure__border-input--bottom-left {
+      bottom: -20px;
+      left: 0;
+      transform: translate(-110%, 0%); }
+    .figure__border-input--bottom-right {
+      bottom: -20px;
+      right: 0;
+      transform: translate(110%, 0%); }
+
+.checkbox {
+  margin: 10px; }
+
 /*# sourceMappingURL=main.css.map */

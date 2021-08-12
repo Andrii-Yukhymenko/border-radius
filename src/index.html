@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>New site</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
-  <title>New site</title>
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/vendor.css">
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-  <main class="main-wrapper">
-    <section class='constructor'>
-    <div class='constructor__container container'>
-      <h1 class='constructor__title'>Border-radius constructor</h1>
-      <p class='constructor__subtitle'>Author - Andrii Yukhymenko</p>
-      <div class='constructor__figure figure'>
-        <div class='figure__body'>
-          <div class='figure__result'>0</div>
-          <div class='figure__checkboxes'>
-            <input type='checkbox' name='css' id='css'>
-            <input type='checkbox' name='webkit' id='webkit'>
-            <input type='checkbox' name='gecko' id='gecko'>
+  <body>
+    <main class="main-wrapper">
+      <section class="constructor">
+        <div class="constructor__container container">
+          <h1 class="constructor__title">Border-radius constructor</h1>
+          <p class="constructor__subtitle">Author - Andrii Yukhymenko</p>
+          <div class="constructor__figure figure">
+            <div class="figure__body">
+              <div class="figure__result">0</div>
+              <div class="figure__checkbox-list">
+                <div class="figure__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" name="css" id="css" />
+                  <label for="css" class="checkbox__label">Css</label>
+                </div>
+                <div class="figure__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" name="webkit" id="webkit" />
+                  <label for="css" class="checkbox__label">Webkit</label>
+                </div>
+                <div class="figure__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" name="gecko" id="gecko" />
+                  <label for="css" class="checkbox__label">Gecko</label>
+                </div>
+              </div>
+              <input
+                id="top-left"
+                type="number"
+                class="figure__border-input figure__border-input--top-left"
+              />
+              <input
+                id="top-right"
+                type="number"
+                class="figure__border-input figure__border-input--top-right"
+              />
+              <input
+                id="bottom-left"
+                type="number"
+                class="figure__border-input figure__border-input--bottom-left"
+              />
+              <input
+                id="bottom-right"
+                type="number"
+                class="figure__border-input figure__border-input--bottom-right"
+              />
+            </div>
           </div>
-          <input type='text' class='figure__border-input figure__border-input--top-left'>
-          <input type='text' class='figure__border-input figure__border-input--top-right'>
-          <input type='text' class='figure__border-input figure__border-input--bottom-left'>
-          <input type='text' class='figure__border-input figure__border-input--bottom-right'>
         </div>
-      </div>
-    </div>
-    </section>
-    <!-- @include('html/h1.html') пример инклуда -->
-  </main>
-  <script src="js/vendor.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+      </section>
+      <!-- @include('html/h1.html') пример инклуда -->
+    </main>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
