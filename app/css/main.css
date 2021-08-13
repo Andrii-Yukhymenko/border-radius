@@ -1,10 +1,14 @@
 body {
-  background-color: #000;
-  color: #fff; }
+  background-color: #404040;
+  color: #fff;
+  font-family: HermanoMayor; }
 
 .container {
   max-width: 800px;
   margin: 0 auto; }
+
+.title {
+  font-size: 40px; }
 
 .constructor__title {
   text-align: center;
@@ -14,12 +18,18 @@ body {
   text-align: center;
   margin: 0px 0px 20px 0px; }
 
+.constructor__link {
+  -webkit-text-decoration: underline 2px;
+  text-decoration: underline 2px; }
+
 .figure {
-  background-color: #7e6767;
+  background-color: #737373;
   padding: 40px;
-  position: relative; }
+  position: relative;
+  box-shadow: 0px 0px 24px 7px rgba(34, 60, 80, 0.2); }
   .figure__result {
-    background-color: #cbcbcb;
+    min-height: 150px;
+    background-color: #a6a6a6;
     margin: 0px 0px 20px 0px;
     padding: 10px; }
   .figure__checkbox-list {
@@ -28,21 +38,23 @@ body {
     justify-content: center; }
   .figure__border-input {
     width: 50px;
-    position: absolute; }
+    padding: 2px;
+    position: absolute;
+    border-radius: 2px; }
     .figure__border-input--top-left {
-      top: -20px;
+      top: -25px;
       left: 0;
       transform: translate(-110%, 0%); }
     .figure__border-input--top-right {
-      top: -20px;
+      top: -25px;
       right: 0;
       transform: translate(110%, 0%); }
     .figure__border-input--bottom-left {
-      bottom: -20px;
+      bottom: -25px;
       left: 0;
       transform: translate(-110%, 0%); }
     .figure__border-input--bottom-right {
-      bottom: -20px;
+      bottom: -25px;
       right: 0;
       transform: translate(110%, 0%); }
 

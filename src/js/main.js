@@ -1,4 +1,4 @@
-let figure = document.querySelector('.figure'),
+const figure = document.querySelector('.figure'),
   borderInputs = document.querySelectorAll('.figure__border-input'),
   figureResult = figure.querySelector('.figure__result'),
   checkboxCss = document.querySelector('input#css'),
@@ -24,6 +24,7 @@ checkboxList.addEventListener('click', (event) => {
 });
 
 function calculate() {
+  console.clear();
   figureResult.innerText = '';
   figure.style = '';
   borderInputs.forEach((item) => {
@@ -40,22 +41,18 @@ function calculate() {
         figureResult.innerHTML += '-moz-border-radius-' + position + ': ' + item.value + 'px; <br>';
       }
       let reformatPosition = reformatStyles(position);
-      console.log(reformatPosition);
-      let radiusValue = {};
-      let radiusPosition = 'border' + reformatPosition + 'Radius';
-      radiusValue[radiusPosition] = item.value + 'px';
-      console.log(radiusValue);
-      Object.assign(figure.style, radiusValue);
-      console.log(figure.style);
+      renderBorders(reformatPosition, item.value);
     }
   });
 }
-// function renderBorders() {
-//   figure.style = '';
-//   borderInputs.forEach((item) =>{
-//     let radiusValue = 'border-' + position + '-radius: ' + item.value + 'px;'
-//   })
-// }
+
+function renderBorders(rp, iv) {
+  let radiusValue = {};
+  let radiusPosition = 'border' + rp + 'Radius';
+  radiusValue[radiusPosition] = iv + 'px';
+  console.log(radiusValue);
+  Object.assign(figure.style, radiusValue);
+}
 
 function reformatStyles(p) {
   let reformatedStyles = p.split('-');

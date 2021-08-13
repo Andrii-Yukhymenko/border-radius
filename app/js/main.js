@@ -19,6 +19,7 @@ checkboxList.addEventListener('click', function (event) {
 });
 
 function calculate() {
+  console.clear();
   figureResult.innerText = '';
   figure.style = '';
   borderInputs.forEach(function (item) {
@@ -38,22 +39,18 @@ function calculate() {
       }
 
       var reformatPosition = reformatStyles(position);
-      console.log(reformatPosition);
-      var radiusValue = {};
-      var radiusPosition = 'border' + reformatPosition + 'Radius';
-      radiusValue[radiusPosition] = item.value + 'px';
-      console.log(radiusValue);
-      Object.assign(figure.style, radiusValue);
-      console.log(figure.style);
+      renderBorders(reformatPosition, item.value);
     }
   });
-} // function renderBorders() {
-//   figure.style = '';
-//   borderInputs.forEach((item) =>{
-//     let radiusValue = 'border-' + position + '-radius: ' + item.value + 'px;'
-//   })
-// }
+}
 
+function renderBorders(rp, iv) {
+  var radiusValue = {};
+  var radiusPosition = 'border' + rp + 'Radius';
+  radiusValue[radiusPosition] = iv + 'px';
+  console.log(radiusValue);
+  Object.assign(figure.style, radiusValue);
+}
 
 function reformatStyles(p) {
   var reformatedStyles = p.split('-');
