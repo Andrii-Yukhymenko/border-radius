@@ -25,30 +25,44 @@ checkboxList.addEventListener('click', (event) => {
 
 function calculate() {
   figureResult.innerText = '';
-  // figure.style = '';
+  figure.style = '';
   borderInputs.forEach((item) => {
     if (item.value !== '' && item.value !== null) {
       let position = item.id;
-      console.clear();
-      console.log(checkboxCss.checked);
-      console.log(checkboxWebkit.checked);
-      console.log(checkboxGecko.checked);
       if (checkboxCss.checked === true) {
         figureResult.innerHTML += 'border-' + position + '-radius: ' + item.value + 'px; <br>';
-        // todo пересмотреть запись и перезапись стилей, запимываеться только первый измененный радиус, += не работает
-        figure.style = 'border-' + position + '-radius: ' + item.value + 'px;';
       }
       if (checkboxWebkit.checked === true) {
         figureResult.innerHTML +=
           '-webkit-border-' + position + '-radius: ' + item.value + 'px; <br>';
-        // figure.style += 'border-' + position + '-radius: ' + item.value + 'px;';
       }
       if (checkboxGecko.checked === true) {
         figureResult.innerHTML += '-moz-border-radius-' + position + ': ' + item.value + 'px; <br>';
-        // figure.style += 'border-' + position + '-radius: ' + item.value + 'px;';
       }
+      let reformatPosition = reformatStyles(position);
+      console.log(reformatPosition);
+      let radiusValue = {};
+      let radiusPosition = 'border' + reformatPosition + 'Radius';
+      radiusValue[radiusPosition] = item.value + 'px';
+      console.log(radiusValue);
+      Object.assign(figure.style, radiusValue);
+      console.log(figure.style);
     }
   });
 }
+// function renderBorders() {
+//   figure.style = '';
+//   borderInputs.forEach((item) =>{
+//     let radiusValue = 'border-' + position + '-radius: ' + item.value + 'px;'
+//   })
+// }
 
-function renderBorders() {}
+function reformatStyles(p) {
+  let reformatedStyles = p.split('-');
+  reformatedStyles =
+    reformatedStyles[0].charAt(0).toUpperCase() +
+    reformatedStyles[0].slice(1).toLowerCase() +
+    reformatedStyles[1].charAt(0).toUpperCase() +
+    reformatedStyles[1].slice(1).toLowerCase();
+  return reformatedStyles;
+}
