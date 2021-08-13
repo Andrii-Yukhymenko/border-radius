@@ -1,12 +1,12 @@
-let figureBody = document.querySelector('.figure__body'),
+let figure = document.querySelector('.figure'),
   borderInputs = document.querySelectorAll('.figure__border-input'),
-  figureResult = figureBody.querySelector('.figure__result'),
+  figureResult = figure.querySelector('.figure__result'),
   checkboxCss = document.querySelector('input#css'),
   checkboxWebkit = document.querySelector('input#webkit'),
   checkboxGecko = document.querySelector('input#gecko'),
   checkboxList = document.querySelector('.figure__checkbox-list');
 
-figureBody.addEventListener('input', (event) => {
+figure.addEventListener('input', (event) => {
   if (
     event.target.classList.contains('figure__border-input--top-left') ||
     event.target.classList.contains('figure__border-input--top-right') ||
@@ -25,7 +25,8 @@ checkboxList.addEventListener('click', (event) => {
 
 function calculate() {
   figureResult.innerText = '';
-  borderInputs.forEach((item, number) => {
+  // figure.style = '';
+  borderInputs.forEach((item) => {
     if (item.value !== '' && item.value !== null) {
       let position = item.id;
       console.clear();
@@ -34,13 +35,17 @@ function calculate() {
       console.log(checkboxGecko.checked);
       if (checkboxCss.checked === true) {
         figureResult.innerHTML += 'border-' + position + '-radius: ' + item.value + 'px; <br>';
+        // todo пересмотреть запись и перезапись стилей, запимываеться только первый измененный радиус, += не работает
+        figure.style = 'border-' + position + '-radius: ' + item.value + 'px;';
       }
       if (checkboxWebkit.checked === true) {
         figureResult.innerHTML +=
           '-webkit-border-' + position + '-radius: ' + item.value + 'px; <br>';
+        // figure.style += 'border-' + position + '-radius: ' + item.value + 'px;';
       }
       if (checkboxGecko.checked === true) {
         figureResult.innerHTML += '-moz-border-radius-' + position + ': ' + item.value + 'px; <br>';
+        // figure.style += 'border-' + position + '-radius: ' + item.value + 'px;';
       }
     }
   });
